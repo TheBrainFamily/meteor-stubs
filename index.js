@@ -2,6 +2,8 @@
 /*global MeteorStubs: true*/
 "use strict";
 
+var _ = require('underscore');
+
 // TODO: Blaze?
 // TODO: ReactiveVar
 // TODO: EJSON?
@@ -193,7 +195,7 @@ stubFactories.Meteor = function () {
     }
   }
 
-  Meteor = {
+  Meteor = _.extend(Meteor, {
     // Core
     isClient: true,
     isServer: true,
@@ -366,7 +368,7 @@ stubFactories.Meteor = function () {
         this.startupFunctions[i]();
       }
     }
-  };
+  });
 
 
   //////////////////////////////////////////////////////////////////////
