@@ -195,7 +195,7 @@ stubFactories.Meteor = function () {
     }
   }
 
-  Meteor = _.extend(Meteor, {
+  Meteor = _.extend(global.Meteor, {
     // Core
     isClient: true,
     isServer: true,
